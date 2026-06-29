@@ -1,0 +1,25 @@
+class Solution {
+public:
+    string reverseWords(string s) {
+        string rev = "";
+        string word="";
+
+        for (char c : s) {
+            if (c != ' ') {
+                word += c;
+            }
+            else {
+                reverse(word.begin(), word.end());
+                rev += word + " ";
+                word = "";
+            }
+        }
+
+        
+        reverse(word.begin(), word.end());
+        rev += word;
+
+        return rev;
+    }
+};
+    
